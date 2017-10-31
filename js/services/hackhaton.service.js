@@ -17,6 +17,7 @@
             var list = $firebaseArray(query);
             return list;
         }
+        
         function add(item) {
             var messagesRef = new Firebase(URL).child("hackathons");
             var query = messagesRef;
