@@ -11,92 +11,31 @@
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<title>Hackathon Türkiye</title>
 </head>
-<body>
+<body ng-app="app">
 
 	<header>
 	
 		<h1>Hackathon Türkiye</h1>
 	</header>
 
-	<section id="cd-timeline" class="cd-container">
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-calendar.png" alt="Picture">
-			</div> <!-- cd-timeline-img -->
+	<hackathon-list></hackathon-list>
 
-			<div class="cd-timeline-content">
-				<h2>Hackathon City İstanbul</h2>
-				<img  alt="Hackathon City İstanbul" src="img/city_istanbul.png" />
-				<p>2-3 Kasım, Lutfi Kirdar International Convention & Exhibition Center</p>
-				<a style="cursor:pointer" onclick="window.open('http://hackathoncity.istanbul')" class="cd-read-more">Web Site</a>
-				<span class="cd-date">2 Kasım</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-calendar.png" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Ford Hackhaton</h2>
-				<img alt="Ford Hackathon" src="img/ford.png" />
-				<p>4 – 5 Kasım 2017 / Ford Otosan Sancaktepe AR-GE Merkezi</p>
-				<a style="cursor:pointer" onclick="window.open('http://openxchackathon.com')" class="cd-read-more">Web Site</a>
-				<span class="cd-date">4 Kasım</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-		
-				<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-calendar.png" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>HACK4HEALTH</h2>
-				<img alt="HACK4HEALTH" src="img/izmir.jpg" />
-				<p>9-10-11 Kasım 2017 / DEPARK Zeytin Binası VIP Katı / Balçova / İzmir</p>
-				<a style="cursor:pointer"  onclick="window.open('http://www.hack4healthizmir.com')" class="cd-read-more">Web Site</a>
-				<span class="cd-date">9 Kasım</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-		
-						<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-calendar.png" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>ANADOLU SIGORTA #HACKATHON2017</h2>
-				<img alt="ANADOLU SIGORTA #HACKATHON2017" src="img/anadolu.png" />
-				<p>18 – 19 Kasım 2017 / Anadolu Sigorta Genel Müdürlüğü</p>
-				<a style="cursor:pointer"  onclick="window.open('https://hackathon.anadolusigorta.com.tr/')" class="cd-read-more">Web Site</a>
-				<span class="cd-date">18 Kasım</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-		
-								<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-calendar.png" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>ING Hackhaton</h2>
-				<img alt="ING Hackathon" src="img/ing.jpg" />
-				<p>25-26 Kasım, Bilkent Cyberpark</p>
-				<a style="cursor:pointer"  onclick="window.open('http://hackathon.ingbank.com.tr/')" class="cd-read-more">Web Site</a>
-				<span class="cd-date">25 Kasım</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-		
-	</section> <!-- cd-timeline -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.min.js">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js">
+</script>
+<script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109031383-1"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
 <script src="js/modernizr.js"></script> <!-- Modernizr -->
 <script src="js/0cef6ebb31.js"></script> 
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109031383-1"></script>
+<script src="js/app.js"></script> 
+<script src="js/services/hackhaton.service.js"></script> 
+<script src="js/components/hackathon-list.component.js"></script> 
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
