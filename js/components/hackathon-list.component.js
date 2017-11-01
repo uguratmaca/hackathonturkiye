@@ -11,11 +11,11 @@
         .component('hackathonList', {
             template: `<section id="cd-timeline" class="cd-container">
             <div class="cd-timeline-block" ng-repeat="item in $ctrl.hackathons">
-                <div class="cd-timeline-img cd-location">
+                <div class="cd-timeline-img cd-location " ng-class=" {'is-hidden' : $index > 0}">
                     <img src="img/cd-icon-calendar.png" alt="Picture">
                 </div> <!-- cd-timeline-img -->
         
-                <div class="cd-timeline-content">
+                <div class="cd-timeline-content" ng-class=" {'is-hidden' : $index > 0}">
                     <h2>{{item.name}}</h2>
                     <img  alt="Hackathon City İstanbul" ng-src="{{item.imageUrl}}" />
                     <p>{{item.description}}</p>
