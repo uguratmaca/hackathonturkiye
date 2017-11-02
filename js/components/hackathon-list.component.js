@@ -14,12 +14,15 @@
             <timeline-event ng-repeat="event in $ctrl.hackathons" side="{{$index%2===1?'right':'left'}}">
                 <timeline-badge ng-class="{'timeline-hidden':$index>2}" class="info" when-visible="$ctrl.animateElementIn"
                 when-not-visible="$ctrl.animateElementOut" >
-                    <i class="fa fa-calender"></i>
+                    <i class="fa fa-calendar"></i>
                 </timeline-badge>
                 <timeline-panel ng-class="{'timeline-hidden':$index>2}" class="info" when-visible="$ctrl.animateElementIn"
                 when-not-visible="$ctrl.animateElementOut" >
                     <timeline-heading>
                     <h4>{{event.name}}</h4>
+                    <p>
+                        <small class="text-muted"><i class="fa fa-clock-o"></i> {{event.date|date}}</small>
+                    </p>
                     </timeline-heading>
                     <img class="img-responsive" alt="{{event.name}}" ng-src="{{event.imageUrl}}" />
                     <p>{{event.description}}</p>
