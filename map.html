@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selam Nasılsın </title>
+	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB52urFh0Oq9P5UhV51PUO__nEw9sCvYuQ"
+  type="text/javascript"></script>
+  
+	<link rel="stylesheet" href="map/leaflet.css" />	
+	<link rel="stylesheet" href="map/searchControl.css" />		
+	<script src="map/leaflet.js"></script>	
+	<script type="text/javascript" src="map/Leaflet.GoogleMutant.js"></script>
+	<script type="text/javascript" src="map/bundle.min.js"></script>
+	<style>		
+		#map {
+			width: 800px;
+			height: 600px;
+		}
+	</style>
+	<script type="text/javascript">
+      handleOnLoad = function() {
+        L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@0.7.7/dist/images/';
+      }
+    </script>
+</head>
+<body onload="handleOnLoad()">
+
+	<div id="map" class="map"></div>
+
+	<script type="text/javascript">
+
+	
+		const provider = new GeoSearch.GoogleProvider({ params: {
+			key: 'AIzaSyB52urFh0Oq9P5UhV51PUO__nEw9sCvYuQ',
+		} });
+
+		const searchControl = new GeoSearch.GeoSearchControl({
+			provider: provider,
+			showPopup: true,
+			searchLabel: 'Adres Giriniz',
+			//style: 'bar', 
+			// autoComplete: true,			 
+			// autoCompleteDelay: 250,
+			autoClose: true, 
+			keepResult: true   
+		});
+		
+		var map = L.map('map').setView([39.028,34.7],6);
+
+
+		var googleRoad = L.gridLayer.googleMutant({
+			maxZoom: 24,
+			type:'roadmap'
+		}).addTo(map);
+		
+		var googleHybrid = L.gridLayer.googleMutant({
+			maxZoom: 24,
+			type:'hybrid'
+		});
+
+		L.control.layers({
+			Roadmap: googleRoad,			
+			Hybrid: googleHybrid,			
+		}, {}, {
+			collapsed: true
+		}).addTo(map);
+
+	
+		map.addControl(searchControl);
+
+var decatlonFeature = [{
+    "type": "Feature",
+    "properties": {
+        "name": "HACKATHONCITY ISTANBUL",      
+		"web-site": "http://hackathoncity.istanbul/",
+        "popupContent": "2-3 Kasım 2017 / İstanbul Lütfi Kırdar Uluslararası Kongre Ve Sergi Sarayı"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [28.989844,41.047586]
+    }
+},
+{
+    "type": "Feature",
+    "properties": {
+        "name": "FORD OTOSAN",      
+		"web-site": "http://hackathoncity.istanbul/",
+        "popupContent": "4 – 5 Kasım 2017 / Ford Otosan Sancaktepe AR-GE Merkezi"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [29.232762,40.975161]
+    }
+}
+];		
+		
+		function onEachFeature(feature, layer) {
+    if (feature.properties && feature.properties.popupContent) {
+		//L.circleMarker(latlng, geojsonMarkerOptions);
+        layer.bindPopup(feature.properties.popupContent);
+    }
+}
+
+
+
+L.geoJSON(decatlonFeature, {
+   onEachFeature: onEachFeature
+}).addTo(map);
+
+
+	</script>
+	
+</body>
+</html>
