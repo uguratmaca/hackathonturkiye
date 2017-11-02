@@ -1,2 +1,3 @@
 # hackathonturkiye
-Türkiye'de düzenlenen hackathonlardan haberder olmak için
+Türkiye'de düzenlenen hackathonları takip etmeyi ve paylaşmayı amaçlıyoruz. #hackathon #hackathonturkey
+https://hackathonturkiye.com/
