@@ -21,7 +21,7 @@
                     <timeline-heading>
                     <h4>{{event.name}}</h4>
                     <p>
-                        <small class="text-muted"><i class="fa fa-clock-o"></i> {{event.date|date}}</small>
+                        <small class="text-muted"><i class="fa fa-clock-o"></i> {{event.date|date:'dd.MM.yyyy'}}</small>
                     </p>
                     </timeline-heading>
                     <img class="img-responsive" alt="{{event.name}}" ng-src="{{event.imageUrl}}" />
