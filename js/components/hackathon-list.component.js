@@ -24,7 +24,7 @@
                     <img class="img-responsive" alt="{{event.name}}" ng-src="{{event.imageUrl}}" />
                     <p>{{event.description}}</p>
                     <timeline-footer>
-                            <span class="btn btn-info" ng-click(event.url)>Daha Fazla</span>
+                            <span class="btn btn-info" ng-click="$ctrl.goToPage(event.url)">Daha Fazla</span>
                   </timeline-footer>
                 </timeline-panel>
             </timeline-event>
