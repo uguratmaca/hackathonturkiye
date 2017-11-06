@@ -1,17 +1,12 @@
 (function () {
     'use strict';
 
-    // Usage:
-    // 
-    // Creates:
-    // 
-
     angular
         .module('app')
         .component('hackathonList', {
             template: `
         <timeline>
-            <timeline-event ng-repeat="event in $ctrl.hackathons" side="{{$index%2===1?'right':'left'}}">
+            <timeline-event ng-if="event.date > $ctrl.today" ng-repeat="event in $ctrl.hackathons" side="{{$index%2===1?'right':'left'}}">
                 <timeline-badge ng-class="{'timeline-hidden':$index>2}" class="info" when-visible="$ctrl.animateElementIn"
                 when-not-visible="$ctrl.animateElementOut" >
                     <i class="fa fa-calendar"></i>
@@ -43,24 +38,23 @@
     function HackathonListController(hackathonService, $window) {
         var $ctrl = this;
 
-
-        ////////////////
+        $ctrl.today = new Date().getTime();
 
         $ctrl.$onInit = function () {
             $ctrl.hackathons = hackathonService.getAll();
         };
+
         $ctrl.$onChanges = function (changesObj) { };
         $ctrl.$onDestroy = function () { };
         $ctrl.goToPage = function (url) {
             $window.open(url, '_blank');
         }
-        // optional: not mandatory (uses angular-scroll-animate)
+
         $ctrl.animateElementIn = function ($el) {
             $el.removeClass('timeline-hidden');
             $el.addClass('bounce-in');
         };
 
-        // optional: not mandatory (uses angular-scroll-animate)
         $ctrl.animateElementOut = function ($el) {
             $el.addClass('timeline-hidden');
             $el.removeClass('bounce-in');
