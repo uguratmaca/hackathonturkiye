@@ -34,9 +34,11 @@
             },
         });
 
-    HackathonListController.$inject = ['hackathonService', '$window'];
-    function HackathonListController(hackathonService, $window) {
+    HackathonListController.$inject = ['hackathonService', '$window', '$rootScope', 'ngDialog'];
+    function HackathonListController(hackathonService, $window, $rootScope, ngDialog) {
         var $ctrl = this;
+
+        $rootScope.user = {};
 
         $ctrl.today = new Date().getTime();
 
@@ -59,5 +61,23 @@
             $el.addClass('timeline-hidden');
             $el.removeClass('bounce-in');
         };
+
+        $rootScope.subscribeMail = function () {
+            var acceptedOrCancelled = window.localStorage.getItem('maillistsubs');
+            if(!acceptedOrCancelled){
+                ngDialog.open({
+                    template: 'subscribeDialog',
+                    className: 'ngdialog-theme-plain'
+                });
+            }
+        }
+
+        $rootScope.saveMail = function () {
+          
+            window.localStorage.setItem('maillistsubs',1);
+            hackathonService.saveMail($rootScope.user.mail);
+   
+            ngDialog.close();
+        }
     }
 })();
