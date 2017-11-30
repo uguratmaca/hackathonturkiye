@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "hackathons": {
+      ".read": "true",
+      ".write": "false"
+    },
+    "mailList": {
+      ".read": "false",
+      ".write": "true"
+    }
+  }
+}
