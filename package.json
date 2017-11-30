@@ -1,7 +1,7 @@
 {
-"name": "travisautodemo",
-"version": "1.0.0",
-"description": "Auto deploy deme",
+"name": "hackathonturkiye",
+"version": "1.0.1",
+"description": "hackathon turkiye",
 "main": "test.js",
 "scripts": {
 "test": "echo \"No tests\" && exit 0"
@@ -14,8 +14,8 @@
 "z",
 "yazilim"
 ],
-"author": "oemegil",
-"license": "ISC",
+"author": "uguratmaca",
+"license": "MIT",
 "bugs": {
 "url": "https://github.com/uguratmaca/hackathonturkiye/issues"
 },
