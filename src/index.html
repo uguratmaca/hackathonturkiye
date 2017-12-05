@@ -3,27 +3,28 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="Content-Language" content="tr"/>
+	<meta http-equiv="Content-Language" content="tr" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<meta name="description" content="türkiye'de düzenlenen hackathon etkinliklerini, istanbul, ankara, izmir, tarihlerini, yerlerini listeler, hackfest, codefest">
 	<meta name="keywords" content="hackathon, türkiye, istanbul, ankara, izmir, hackfest, codefest">
 
-    <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.hackathonturkiye.com/\/","name":"hackathon turkiye","alternateName":"hackathon turkiye","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.hackathonturkiye.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-	
+	<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.hackathonturkiye.com/\/","name":"hackathon turkiye","alternateName":"hackathon turkiye","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.hackathonturkiye.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+
 	<link rel="shortcut icon" type="image/png" href="img/logo.png" />
-	
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="css/angular-timeline.css">
 	<link rel="stylesheet" href="css/angular-timeline-images.css">
 	<link rel="stylesheet" href="css/angular-timeline-animations.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog-theme-plain.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css">	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
-	
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	 crossorigin="anonymous">
 
 	<title>Hackathon Türkiye</title>
 </head>
@@ -38,20 +39,23 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Hackathon Türkiye</a>
+			<a class="navbar-brand" href ng-click="changePage('new');">Hackathon Türkiye</a>
 		</div>
 
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="https://medium.com/hackathonturkiye" target="_blank">Blog</a>
+					<a href ng-click="changePage('old');">Geçmiş Hackathonlar</a>
+				</li>
+				<li>
+					<a href="https://medium.com/hackathonturkiye" rel="noopener" target="_blank">Blog</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
 	<div id="list" class="row" on-scroll-to-bottom="subscribeMail()">
-		<div class="col-md-8" >
+		<div class="col-md-8">
 			<hackathon-list></hackathon-list>
 		</div>
 		<div class="col-md-3 col-md-offset-1">
@@ -107,12 +111,12 @@
 	</script>
 	<footer>
 		<div class="col-md-8" style="text-align:center;padding-bottom:24px;">
-		<span style="cursor:pointer; padding-top:12px;" onclick="window.open('https://twitter.com/turkeyhackathon')" class="fa fa-2x fa-twitter"></span>
-		<span style="cursor:pointer; padding-top:12px; padding-left:24px;" onclick="window.open('https://www.facebook.com/Hackathon-Türkiye-920939078056993/')"
-		 class="fa fa-2x fa-facebook"></span>
-		<span style="cursor:pointer; padding-top:12px; padding-left:32px;" onclick="window.open('https://join.slack.com/t/hackathon-turkey/shared_invite/enQtMjY1MTc0NTA4MDg0LTAwOWE4YjgwY2ViYTYwNTNjZTE0YjU3MGQ0NjI4ZDY1Y2FmZTFhNGM4OTI2ZWEzMzY0NTk3NmE5YWZlZGE2ZTI')"
-		 class="fa fa-2x fa-slack"></span>
-		 </div>
+			<span style="cursor:pointer; padding-top:12px;" onclick="window.open('https://twitter.com/turkeyhackathon')" class="fa fa-2x fa-twitter"></span>
+			<span style="cursor:pointer; padding-top:12px; padding-left:24px;" onclick="window.open('https://www.facebook.com/Hackathon-Türkiye-920939078056993/')"
+			 class="fa fa-2x fa-facebook"></span>
+			<span style="cursor:pointer; padding-top:12px; padding-left:32px;" onclick="window.open('https://join.slack.com/t/hackathon-turkey/shared_invite/enQtMjY1MTc0NTA4MDg0LTAwOWE4YjgwY2ViYTYwNTNjZTE0YjU3MGQ0NjI4ZDY1Y2FmZTFhNGM4OTI2ZWEzMzY0NTk3NmE5YWZlZGE2ZTI')"
+			 class="fa fa-2x fa-slack"></span>
+		</div>
 	</footer>
 </body>
 
