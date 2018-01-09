@@ -15,3 +15,7 @@
 .ngdialog.ngdialog-theme-plain .ngdialog-close:before{
   color: white!important;
 }
+
+p {
+margin-top: 8px;
+}
