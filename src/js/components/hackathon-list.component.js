@@ -6,7 +6,7 @@
         .component('hackathonList', {
             template: `
         <timeline>
-            <timeline-event ng-if="$ctrl.route == 'old' ? event.date < $ctrl.today : event.date > $ctrl.today" ng-repeat="event in $ctrl.hackathons" side="{{$index%2===1?'right':'left'}}">
+            <timeline-event id="event.id" ng-if="$ctrl.route == 'old' ? event.date < $ctrl.today : event.date > $ctrl.today" ng-repeat="event in $ctrl.hackathons" side="{{$index%2===1?'right':'left'}}">
                 <timeline-badge ng-class="{'timeline-hidden':$index>2}" class="info" when-visible="$ctrl.animateElementIn"
                 when-not-visible="$ctrl.animateElementOut" >
                     <i class="fa fa-calendar"></i>
