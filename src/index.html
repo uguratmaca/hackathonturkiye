@@ -53,8 +53,8 @@
 			</ul>
 		</div>
 	</nav>
-	
-	<div id="list" class="row" >
+
+	<div id="list" class="row">
 		<div class="col-md-8">
 			<hackathon-list></hackathon-list>
 		</div>
@@ -86,7 +86,15 @@
 	<script src="js/services/hackhaton.service.js"></script>
 	<script src="js/components/hackathon-list.component.js"></script>
 
-	<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"e73471f6b46f14749c393649c","lid":"744a9e6606","uniqueMethods":true}) })</script>
+
+	<script>
+		document.cookie = "MCPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+		document.cookie = "MCPopupSubscribed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+	</script>
+
+	<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js"
+	 data-dojo-config="usePlainJson: true, isDebug: false"></script>
+	<script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us18.list-manage.com", "uuid": "e73471f6b46f14749c393649c", "lid": "744a9e6606", "uniqueMethods": true }) })</script>
 
 	<script>
 		window.dataLayer = window.dataLayer || [];
