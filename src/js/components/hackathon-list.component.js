@@ -67,23 +67,5 @@
             $el.addClass('timeline-hidden');
             $el.removeClass('bounce-in');
         };
-
-        $rootScope.subscribeMail = function () {
-            var acceptedOrCancelled = window.localStorage.getItem('maillistsubs');
-            if(!acceptedOrCancelled){
-                ngDialog.open({
-                    template: 'subscribeDialog',
-                    className: 'ngdialog-theme-plain'
-                });
-            }
-        }
-
-        $rootScope.saveMail = function () {
-          
-            window.localStorage.setItem('maillistsubs',1);
-            hackathonService.saveMail($rootScope.user.mail);
-   
-            ngDialog.close();
-        }
     }
 })();

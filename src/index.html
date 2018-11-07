@@ -53,8 +53,8 @@
 			</ul>
 		</div>
 	</nav>
-
-	<div id="list" class="row" on-scroll-to-bottom="subscribeMail()">
+	
+	<div id="list" class="row" >
 		<div class="col-md-8">
 			<hackathon-list></hackathon-list>
 		</div>
@@ -65,23 +65,6 @@
 			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 	</div>
-
-	<script type="text/ng-template" id="subscribeDialog">
-
-		<form ng-submit="saveMail()">
-			<div class="row">
-				<div>
-					<h2 class="labelText">Hackathonlardan haberdar olmak için</h2>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-8"><input class="form-control" type="email" ng-model="user.mail" required placeholder="Email Adresiniz"/></div>
-				<div class="col-md-4"><input type="submit" class="form-control"  value="Gönder"/></div>
-			</div>
-		</form>
-
-	</script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-sanitize.js"></script>
@@ -102,6 +85,9 @@
 	<script src="js/app.js"></script>
 	<script src="js/services/hackhaton.service.js"></script>
 	<script src="js/components/hackathon-list.component.js"></script>
+
+	<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"e73471f6b46f14749c393649c","lid":"744a9e6606","uniqueMethods":true}) })</script>
+
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
@@ -116,7 +102,7 @@
 			 class="fa fa-2x fa-facebook"></span>
 			<span style="cursor:pointer; padding-top:12px; padding-left:24px;" onclick="window.open('https://join.slack.com/t/hackathon-turkey/shared_invite/enQtMjY1MTc0NTA4MDg0LTAwOWE4YjgwY2ViYTYwNTNjZTE0YjU3MGQ0NjI4ZDY1Y2FmZTFhNGM4OTI2ZWEzMzY0NTk3NmE5YWZlZGE2ZTI')"
 			 class="fa fa-2x fa-slack"></span>
-			 <span style="cursor:pointer; padding-top:12px; padding-left:24px;" onclick="window.open('https://www.linkedin.com/company/hackathon-turkiye/')"
+			<span style="cursor:pointer; padding-top:12px; padding-left:24px;" onclick="window.open('https://www.linkedin.com/company/hackathon-turkiye/')"
 			 class="fa fa-2x fa-linkedin"></span>
 		</div>
 	</footer>
